@@ -8,7 +8,7 @@ This repository contains small Java programming exercises that touch different b
 3. Go to the root directory for compiled files ```cd ./bins```
 4. Run compiled files (remember not to type .class extension) ```java edu/ksalekk/clientserver/PhoneBookServer```
 
-You can also run all these programms in your IDE.
+You can also run all these programs in your IDE.
 ***
 
 # Five Philosophers
