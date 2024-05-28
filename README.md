@@ -1,12 +1,14 @@
 # Java practice programs
 This repository contains small Java programming exercises that touch different branches, e.g. i/o operations, network communication, multithreading.
 
-## Run Java programm from command line (Linux / git bash)
+## Run Java program from command line (Linux / git bash)
 0. Make sure you have installed JDK ```javac -version```
 1. Go to your working directory, e.g. ```cd ./java-practice ```
 2. Compile specified .java files to the specified directory, e.g. <br/> ```javac -d bins ./src/main/java/edu/ksalekk/clientserver/PhoneBookServer.java```
 3. Go to the root directory for compiled files ```cd ./bins```
 4. Run compiled files (remember not to type .class extension) ```java edu/ksalekk/clientserver/PhoneBookServer```
+
+You can also run all these programms in your IDE.
 ***
 
 # Five Philosophers
