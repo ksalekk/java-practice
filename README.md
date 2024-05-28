@@ -11,7 +11,19 @@ This repository contains small Java programming exercises that touch different b
 You can also run all these programs in your IDE.
 ***
 
-# Five Philosophers
+# Dining Philosophers (Five Philosophers)
+One of the most famous synchronization issues in concurrent (https://en.wikipedia.org/wiki/Dining_philosophers_problem). This solution uses arbitrator (waiter) that is proxy for picking up / putting down forks.
+
+### Run
+```
+javac -d bins ./src/main/java/edu/ksalekk/fivephilosophers/*.java
+cd ./bins
+```
+You can specify the number of philosophers and forks (default 5):
+```
+java edu/ksalekk/fivephilosophers/FivePhilosophersTest 10
+```
+
 ***
 
 # Reader Writer
