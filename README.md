@@ -45,6 +45,18 @@ java edu/ksalekk/readerwriter/ReadersWritersProblemSimulation [writers] [readers
 ***
 
 # Elevator Simulator
+Program that simulate elevator working in a building. 
+
+## Run
+```
+javac -d bins ./src/main/java/edu/ksalekk/elevatorsimulator/*.java
+cd ./bins
+```
+You can specify the number of floors in the building (first positional argument), time in seconds needed for moving one floor by the elevator (second one) and probability of a passenger appearing in a unit of time t on a random floor with the intention of traveling to another, random floor (third one):
+```
+java edu/ksalekk/readerwriter/ReadersWritersProblemSimulation [writers] [readers] [books]
+```
+
 ***
 
 # Client Server 
