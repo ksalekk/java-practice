@@ -39,7 +39,7 @@ cd ./bins
 ```
 You can specify the number of writers (first positional argument), readers (second one) and books (third one):
 ```
-java edu/ksalekk/readerwriter/ReadersWritersProblemSimulation 20 3 10
+java edu/ksalekk/readerwriter/ReadersWritersProblemSimulation [writers] [readers] [books]
 ```
 
 ***
