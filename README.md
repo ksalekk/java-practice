@@ -1,14 +1,15 @@
 # Java practice programs
-
 This repository contains small Java programming exercises that touch different branches, e.g. i/o operations, network communication, multithreading.
 
-## five-phlisophers
+## Run Java programm from command line
 
-## reader-writer
+### five-phlisophers
 
-## elevator-simulator
+### reader-writer
 
-## client-server 
+### elevator-simulator
 
-## set-calculator
+### client-server 
+
+### set-calculator
 
