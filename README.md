@@ -30,7 +30,7 @@ java edu/ksalekk/fivephilosophers/FivePhilosophersTest 10
 Next well known concurrency problem where one resource is shared for reading and writing processes. In this varation we defined *W* writers that write in total *B* books (i.e. in all system, not per one writer). There is *R* readers that have to read all *B* books. Each book can be read by at most one reader at once and readers start to reading book as soon as they become available.
 
 ## Architecture
-
+![Readers and writers UML diagram](./src/main/resources/reader_writer_uml.jpg)
 
 ## Run
 ```
