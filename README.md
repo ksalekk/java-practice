@@ -27,6 +27,21 @@ java edu/ksalekk/fivephilosophers/FivePhilosophersTest 10
 ***
 
 # Reader Writer
+Next well known concurrency problem where one resource is shared for reading and writing processes. In this varation we defined *W* writers that write in total *B* books (i.e. in all system, not per one writer). There is *R* readers that have to read all *B* books. Each book can be read by at most one reader at once and readers start to reading book as soon as they become available.
+
+## Architecture
+
+
+## Run
+```
+javac -d bins ./src/main/java/edu/ksalekk/readerwriter/*.java
+cd ./bins
+```
+You can specify the number of writers (first positional argument), readers (second one) and books (third one):
+```
+java edu/ksalekk/readerwriter/ReadersWritersProblemSimulation [writers] [readers] [books]
+```
+
 ***
 
 # Elevator Simulator
