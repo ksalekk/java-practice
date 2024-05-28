@@ -3,13 +3,14 @@ This repository contains small Java programming exercises that touch different b
 
 ## Run Java programm from command line
 
-### five-phlisophers
+***
+## five-phlisophers
 
-### reader-writer
+## reader-writer
 
-### elevator-simulator
+## elevator-simulator
 
-### client-server 
+## client-server 
 
-### set-calculator
+## set-calculator
 
