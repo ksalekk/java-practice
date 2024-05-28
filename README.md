@@ -7,19 +7,21 @@ This repository contains small Java programming exercises that touch different b
 2. Compile specified .java files to the specified directory, e.g. <br/> ```javac -d bins ./src/main/java/edu/ksalekk/clientserver/PhoneBookServer.java```
 3. Go to the root directory for compiled files ```cd ./bins```
 4. Run compiled files (remember not to type .class extension) ```java edu/ksalekk/clientserver/PhoneBookServer```
-
 ***
-## five-phlisophers
 
-## reader-writer
+# Five Philosophers
+***
 
-## elevator-simulator
+# Reader Writer
+***
 
+# Elevator Simulator
+***
 
-# client-server 
+# Client Server 
 Phone book appliaction with client-server communication. 
 
-## Run
+### Run
 1. Run server program
 ```
 javac -d bins ./src/main/java/edu/ksalekk/clientserver/PhoneBookServer.java
@@ -36,7 +38,7 @@ java edu/ksalekk/clientserver/PhoneBookClient
 java edu/ksalekk/clientserver/PhoneBookClient
 ```
 
-## Architecture
+### Architecture
 Communication is implemented with text-based protocol and single transmission unit is represented by single text line:
 C -> S:
 ```
@@ -55,7 +57,7 @@ If a client request resource that does not exist, then the server will response 
 --- no name: [name] ---
 ```
 Each client is served in a separated server thread.
+***
 
-
-## set-calculator
-
+# Set Calculator
+***
