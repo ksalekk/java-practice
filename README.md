@@ -1,5 +1,5 @@
 # Java practice programs
-The repository contains few small Java programs on various issues, e.g. multithreading, i/o operations, network communication, collections.
+The repository contains few small Java programs that touch various branches of Java programming, e.g. multithreading, i/o operations, network communication, collections.
 
 ### Run Java program from command line (Linux / git bash)
 1. Make sure you have installed JDK
