@@ -53,10 +53,10 @@ B  total number of books to be written (i.e. in the entire system, not per one w
 
 In this reader-writer problem variation it is assumed that every reader must read all the books created in the system. A book can be read by only one reader at once and readers need to start reading books as soon as these books become available.
 
-## Architecture
-![Readers and writers UML diagram](./src/main/resources/readers-writers-uml.jpg)
+### Architecture
+![Readers and writers UML diagram](./src/main/resources/readers-writers-uml.png)
 
-## Run
+### Run
 ```
 javac -d bins ./src/main/java/edu/ksalekk/readerwriter/*.java
 cd ./bins
@@ -64,8 +64,29 @@ java edu/ksalekk/readerwriter/ReadersWritersProblemSimulation [writers] [readers
 ```
 ***
 
-# Client Server 
-Phone book appliaction with client-server communication. 
+## Client Server 
+Phone book small application with client-server communication. Protocol is text-based, the transmission unit is a line of text, ending with a newline character (\n).
+
+#### C -> S
+```
+put [name] [number]
+get [name]
+```
+[number] is the phone number assigned to the lastname [name], and the put message places this assignment on the server. If there is an assignment on the server, it is replaced by a new one. 
+
+#### S -> C
+Both for get and put statements server responses with:
+```
+[name] [number]
+```
+
+If there is no assignment, the server returns an error line:
+```
+--- no name: [name] ---
+```
+
+The client program allows to enter pairs (name, phone number) into the server multiple times and repeatedly query the server for the existing assignment of the phone number to the name. Lowercase and uppercase letters are not distinguished. Each client is served in a separate thread.
+
 
 ### Run
 1. Run server program
@@ -79,31 +100,24 @@ java edu/ksalekk/clientserver/PhoneBookServer
 cd ./bins
 java edu/ksalekk/clientserver/PhoneBookClient
 ```
-3. Every client request requires new connection (new program running)
-```
-java edu/ksalekk/clientserver/PhoneBookClient
-```
-
-### Architecture
-Communication is implemented with text-based protocol and single transmission unit is represented by single text line:
-C -> S:
-```
-put [name] [number]
-get [name]
-```
-[number] is phone number assigned to lastname [name] and 'put' statement causes put such an assignment on the server (if such an assignment exists, it will be replaced with new one).
-
-Both for get and put statements server responses with:
-S -> C
-```
-[name] [number]
-```
-If a client request resource that does not exist, then the server will response with the statement:
-```
---- no name: [name] ---
-```
-Each client is served in a separated server thread.
 ***
 
-# Set Calculator
+## Set Calculator
+A program that compute simple logical operations on two user specified sets of non negative int numbers. Input data has the form:
+```
+[first, set, data] * | + | – [second, set, data]
+where * is the intersection of sets, + is the sum of sets, and – is the difference of sets
+
+For example:
+[5,3,8] * [1,0,3] == [3]
+[5,3,8] + [1,0,3] == [0,1,3,5,8]
+```
+
+### Run
+```
+javac -d bins ./src/main/java/edu/ksalekk/setcalculator/SetCalculator.java
+cd ./bins
+java edu/ksalekk/setcalculator/SetCalculator
+```
+
 ***
