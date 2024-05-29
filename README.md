@@ -53,10 +53,10 @@ B  total number of books to be written (i.e. in the entire system, not per one w
 
 In this reader-writer problem variation it is assumed that every reader must read all the books created in the system. A book can be read by only one reader at once and readers need to start reading books as soon as these books become available.
 
-## Architecture
+### Architecture
 ![Readers and writers UML diagram](./src/main/resources/readers-writers-uml.png)
 
-## Run
+### Run
 ```
 javac -d bins ./src/main/java/edu/ksalekk/readerwriter/*.java
 cd ./bins
@@ -64,7 +64,7 @@ java edu/ksalekk/readerwriter/ReadersWritersProblemSimulation [writers] [readers
 ```
 ***
 
-# Client Server 
+## Client Server 
 Phone book small application with client-server communication. Protocol is text-based, the transmission unit is a line of text, ending with a newline character (\n).
 
 #### C -> S
@@ -88,7 +88,7 @@ If there is no assignment, the server returns an error line:
 The client program allows to enter pairs (name, phone number) into the server multiple times and repeatedly query the server for the existing assignment of the phone number to the name. Lowercase and uppercase letters are not distinguished. Each client is served in a separate thread.
 
 
-## Run
+### Run
 1. Run server program
 ```
 javac -d bins ./src/main/java/edu/ksalekk/clientserver/PhoneBookServer.java
@@ -102,5 +102,22 @@ java edu/ksalekk/clientserver/PhoneBookClient
 ```
 ***
 
-# Set Calculator
+## Set Calculator
+A program that compute simple logical operations on two user specified sets of non negative int numbers. Input data has the form:
+```
+[first, set, data] * | + | – [second, set, data]
+where * is the intersection of sets, + is the sum of sets, and – is the difference of sets
+
+For example:
+[5,3,8] * [1,0,3] == [3]
+[5,3,8] + [1,0,3] == [0,1,3,5,8]
+```
+
+### Run
+```
+javac -d bins ./src/main/java/edu/ksalekk/setcalculator/SetCalculator.java
+cd ./bins
+java edu/ksalekk/setcalculator/SetCalculator
+```
+
 ***
