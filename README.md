@@ -1,62 +1,67 @@
 # Java practice programs
-This repository contains small Java programming exercises that touch different branches, e.g. i/o operations, network communication, multithreading.
+The repository contains few small Java programs on various issues, e.g. multithreading, i/o operations, network communication, collections.
 
-## Run Java program from command line (Linux / git bash)
-0. Make sure you have installed JDK ```javac -version```
-1. Go to your working directory, e.g. ```cd ./java-practice ```
-2. Compile specified .java files to the specified directory, e.g. <br/> ```javac -d bins ./src/main/java/edu/ksalekk/clientserver/PhoneBookServer.java```
-3. Go to the root directory for compiled files ```cd ./bins```
-4. Run compiled files (remember not to type .class extension) ```java edu/ksalekk/clientserver/PhoneBookServer```
+### Run Java program from command line (Linux / git bash)
+1. Make sure you have installed JDK
+   ```
+   javac -version
+   ```
+2. Clone the repository to your working directory
+   ```
+   git clone https://github.com/ksalekk/java-practice.git
+   cd ./java-practice
+   ```
+3. Compile .java files
+   ```
+   javac -d bins ./src/main/java/edu/ksalekk/[project-directory]/*.java
+   ```
+4. Go to the root directory for compiled files and run specified file (remember not to type .class extension)
+   ```
+   cd ./bins
+   java edu/ksalekk/[project-directory]/[test-class]
+   ```
 
-You can also run all these programs in your IDE.
+You can also run all programs in your IDE.
 ***
 
-# Dining Philosophers (Five Philosophers)
-One of the most famous synchronization issues in concurrent (https://en.wikipedia.org/wiki/Dining_philosophers_problem). This solution uses arbitrator (waiter) that is proxy for picking up / putting down forks.
+## Dining Philosophers (Five Philosophers)
+One of the most famous problems of concurrent programming, in which multiple threads (philosophers) use shared resources (forks). The following solution uses an arbiter (waiter) which is asked to pick up and put away forks for philosohpers. This makes the waiter aware of which forks are currently in use and the solution prevents deadlock.
+
+The following solution may not prevent starvation because it relies on the notifyAll() method to notify threads about resources free and that may depends on the JVM implementation. For a relatively small number of philosophers (up to 10), no starvation was observed.
 
 ### Run
 ```
 javac -d bins ./src/main/java/edu/ksalekk/fivephilosophers/*.java
 cd ./bins
 ```
-You can specify the number of philosophers and forks (default 5):
+The program is parameterized by the number of philosophers and forks (default 5):
 ```
-java edu/ksalekk/fivephilosophers/FivePhilosophersTest 10
+java edu/ksalekk/fivephilosophers/FivePhilosophersTest [philosophers_cnt]
 ```
-
 ***
 
-# Reader Writer
-Next well known concurrency problem where one resource is shared for reading and writing processes. In this varation we defined *W* writers that write in total *B* books (i.e. in all system, not per one writer). There is *R* readers that have to read all *B* books. Each book can be read by at most one reader at once and readers start to reading book as soon as they become available.
+
+## Reader Writer
+Another well-known problem of multithreaded programs, in which one resource is shared between 2 types of processes – those that do not make changes to this resource (reader) and those that make changes (writer).
+
+The program is parameterized with positional arguments:
+```
+W  number of writers creating books
+R  number of readers reading books 
+B  total number of books to be written (i.e. in the entire system, not per one writer)
+```
+
+In this reader-writer problem variation it is assumed that every reader must read all the books created in the system. A book can be read by only one reader at once and readers need to start reading books as soon as these books become available.
 
 ## Architecture
-![Readers and writers UML diagram](./src/main/resources/reader_writer_uml.jpg)
+![Readers and writers UML diagram](./src/main/resources/readers-writers-uml.jpg)
 
 ## Run
 ```
 javac -d bins ./src/main/java/edu/ksalekk/readerwriter/*.java
 cd ./bins
-```
-You can specify the number of writers (first positional argument), readers (second one) and books (third one):
-```
 java edu/ksalekk/readerwriter/ReadersWritersProblemSimulation [writers] [readers] [books]
 ```
-
-***
-
-# Elevator Simulator
-Program that simulate elevator working in a building. 
-
-## Run
-```
-javac -d bins ./src/main/java/edu/ksalekk/elevatorsimulator/*.java
-cd ./bins
-```
-You can specify the number of floors in the building (first positional argument), time in seconds needed for moving one floor by the elevator (second one) and probability of a passenger appearing in a unit of time t on a random floor with the intention of traveling to another, random floor (third one):
-```
-java edu/ksalekk/readerwriter/ReadersWritersProblemSimulation [writers] [readers] [books]
-```
-
 ***
 
 # Client Server 
